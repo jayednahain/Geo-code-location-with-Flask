@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  
+
+  </head>
+  <body>
+      <br>
+      <br>
+      <Div class="container">
+          
+            <div class="jumbotron">
+                <h1 class="display-3 text-center">Super Geocoder</h1>
+                <p class="lead text-center">Please upload your CSV file. The values containing addresses should be in a column named <em>address</em> or <em>Address</em></h3></p>
+                <hr class="my-3">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">
+                    <form action="{{url_for('success_table')}}" method="POST" enctype="multipart/form-data">
+                        <input type="file" accept=".csv" name="file" />
+                        <button class="btn btn-dark" type="submit"> Submit </button>
+                      </form>                    
+                </p>
+                <div class='container'>
+                  <div class="text-center">
+                    {{text|safe}}
+                    {% include 'download2.html' ignore missing %}
+
+                  </div>
+
+                  
+
+                </div>
+            </div>
+
+          </div>
+      </Div>
+    
+  </body>
+</html>
